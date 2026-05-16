@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Packages | Common Ground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f6f2d9;
+      --brown: #72492b;
+      --orange: #cd6d39;
+      --burg: #6b2e2e;
+      --blue: #99b6d6;
+      --offblack: #373737;
+      --yellow: #eab347;
+      --olive: #838f40;
+      --pink: #efc8c4;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cream);
+      color: var(--offblack);
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background-color: var(--cream);
+      border-bottom: 3px solid var(--brown);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--brown);
+    }
+
+    h1 {
+      font-size: 58px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    .mini-heading {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--olive);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      color: var(--burg);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 24px;
+      background-color: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 700;
+      border: 2px solid var(--brown);
+    }
+
+    .button:hover {
+      background-color: var(--green);
+      border-color: var(--green);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: var(--cream);
+    }
+
+    .section-line {
+      border-top: 2px dashed var(--orange);
+      border-bottom: 2px dashed var(--orange);
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1120px;
+      margin: 40px auto 0;
+      text-align: left;
+    }
+
+    .package-card {
+      background-color: var(--cream);
+      border: 2px solid var(--brown);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 8px 8px 0 var(--pink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .package-card:nth-child(2) {
+      box-shadow: 8px 8px 0 var(--blue);
+    }
+
+    .package-card:nth-child(3) {
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+
+    .package-card p {
+      margin: 0 0 18px;
+      max-width: none;
+    }
+
+    .package-name {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: var(--burg);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 16px 0 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    .best-for {
+      background-color: var(--pink);
+      border: 2px solid var(--brown);
+      border-radius: 18px;
+      padding: 16px;
+      margin: 20px 0;
+      font-weight: 700;
+      color: var(--offblack);
+    }
+
+    .best-for.blue {
+      background-color: var(--blue);
+    }
+
+    .best-for.yellow {
+      background-color: var(--yellow);
+    }
+
+    .note {
+      background-color: var(--orange);
+      color: var(--cream);
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 780px;
+      margin: 30px auto;
+      font-size: 22px;
+      font-weight: 700;
+      border: 3px solid var(--burg);
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 35px auto 0;
+      text-align: left;
+    }
+
+    .addon {
+      border: 2px solid var(--brown);
+      border-radius: 20px;
+      padding: 20px;
+      background-color: var(--cream);
+      box-shadow: 6px 6px 0 var(--blue);
+      font-weight: 700;
+    }
+
+    .addon:nth-child(2n) {
+      box-shadow: 6px 6px 0 var(--pink);
+    }
+
+    .addon:nth-child(3n) {
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .addon:nth-child(4n) {
+      box-shadow: 6px 6px 0 var(--orange);
+    }
+
+    .enquiry-box {
+      max-width: 820px;
+      margin: 45px auto 0;
+      padding: 34px;
+      border: 2px solid var(--brown);
+      border-radius: 26px;
+      box-shadow: 8px 8px 0 var(--olive);
+      background-color: var(--cream);
+    }
+
+    .enquiry-box p {
+      max-width: 650px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background-color: var(--brown);
+      color: var(--cream);
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      li {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 65px 20px 45px;
+      }
+
+      .package-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="mini-heading">Social media management</div>
+    <h1>Package Options</h1>
+    <p class="intro">Pick the level of support that fits where your business is right now.</p>
+    <p>Whether you need simple consistency, stronger strategy, or your content fully taken care of, these packages are designed to help your business show up online with more confidence and less content chaos.</p>
+    <a class="button" href="index.html">Back home</a>
+  </header>
+
+  <section>
+    <div class="mini-heading">Monthly packages</div>
+    <h2>Choose your level of support</h2>
+
+    <div class="packages-grid">
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">Seed</h3>
+          <p>A simple, done-for-you content package designed to keep your business showing up consistently online without the stress of planning or writing posts.</p>
+          <div class="best-for">Best for: businesses who want to stay consistent without doing it all themselves.</div>
+          <ul>
+            <li>8 posts per month, including static posts and carousels</li>
+            <li>Monthly content plan and calendar</li>
+            <li>Caption guidance</li>
+            <li>Monthly performance summary</li>
+            <li>Basic engagement guidance, including what to do after posting</li>
+          </ul>
+        </div>
+        <p class="price">£299 per month</p>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">Growth</h3>
+          <p>A more strategic approach to your content, focused on building your brand presence, connecting with your audience, and creating posts that drive engagement.</p>
+          <div class="best-for blue">Best for: businesses ready to build a stronger online presence with more strategy behind the content.</div>
+          <ul>
+            <li>12-16 posts per month</li>
+            <li>2-4 light reels per month</li>
+            <li>Captions written in your brand voice</li>
+            <li>Content strategy, not just planning, plus calendar</li>
+            <li>Brand voice refinement</li>
+            <li>Monthly analytics check-in</li>
+            <li>Light engagement support, including reply guidance and templates</li>
+          </ul>
+        </div>
+        <p class="price">£575 per month</p>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">In Bloom</h3>
+          <p>A fully managed service where your content is completely taken care of from strategy to creation, allowing you to focus on your business while your online presence grows.</p>
+          <div class="best-for yellow">Best for: businesses who want full support, content creation and community management handled for them.</div>
+          <ul>
+            <li>20 posts per month</li>
+            <li>4-8 reels or short videos</li>
+            <li>Full content strategy and calendar with captions written in your brand voice</li>
+            <li>2 content filming/creation days per month</li>
+            <li>Dedicated community management</li>
+            <li>Monthly strategy call or meeting</li>
+            <li>Monthly analytics check-in and performance summary</li>
+          </ul>
+        </div>
+        <p class="price">£1099 per month</p>
+      </div>
+
+    </div>
+
+    <div id="enquire" class="enquiry-box">
+      <h2>Not sure which package fits?</h2>
+      <p>Tell me what you need help with, where your social media is at right now, and what you’d love it to feel like. I’ll help you find the best fit.</p>
+      <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Enquire about packages</a>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <div class="mini-heading">Extras</div>
+    <h2>Add-ons and separately priced services</h2>
+    <p>Need something specific without committing to a full monthly package? These can be added on or booked separately depending on what your business needs.</p>
+
+    <div class="addons-grid">
+      <div class="addon">One-off content shoot day: on-site filming and photography for authentic reels and posts</div>
+      <div class="addon">Reel editing bundle, for example 4-8 videos</div>
+      <div class="addon">Extra reels per month</div>
+      <div class="addon">Caption packs, including 10-20 captions</div>
+      <div class="addon">Content ideas bank with 4 weeks of ideas</div>
+      <div class="addon">Canva templates</div>
+      <div class="addon">Instagram account setup or optimisation</div>
+      <div class="addon">Additional platform management, such as Facebook or TikTok</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ready to make posting feel less chaotic?</h2>
+    <div class="note">
+      Your content should help your business feel clearer, not make your brain feel like it has 47 tabs open.
+    </div>
+    <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Enquire now</a>
+    <a class="button" href="groundwork.html">View Groundwork</a>
+  </section>
+
+  <footer>
+    <p>Common Ground © 2026</p>
+  </footer>
+
+</body>
+</html>
