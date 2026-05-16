@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio | Common Ground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f6f2d9;
+      --brown: #72492b;
+      --orange: #cd6d39;
+      --burg: #6b2e2e;
+      --blue: #99b6d6;
+      --offblack: #373737;
+      --yellow: #eab347;
+      --olive: #838f40;
+      --pink: #efc8c4;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cream);
+      color: var(--offblack);
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background-color: var(--cream);
+      border-bottom: 3px solid var(--brown);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--brown);
+    }
+
+    h1 {
+      font-size: 58px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    .mini-heading {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--olive);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      color: var(--burg);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 24px;
+      background-color: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 700;
+      border: 2px solid var(--brown);
+    }
+
+    .button:hover {
+      background-color: var(--burg);
+      border-color: var(--burg);
+    }
+
+    .button.green {
+      background-color: var(--olive);
+      border-color: var(--olive);
+    }
+
+    .button.green:hover {
+      background-color: var(--brown);
+      border-color: var(--brown);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section-line {
+      border-top: 2px dashed var(--orange);
+      border-bottom: 2px dashed var(--orange);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1050px;
+      margin: 35px auto 0;
+    }
+
+    .project-card {
+      background-color: var(--cream);
+      border: 2px solid var(--brown);
+      border-radius: 24px;
+      padding: 26px;
+      text-align: left;
+      box-shadow: 8px 8px 0 var(--pink);
+    }
+
+    .project-card:nth-child(2) {
+      box-shadow: 8px 8px 0 var(--blue);
+    }
+
+    .project-card:nth-child(3) {
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+
+    .project-card:nth-child(4) {
+      box-shadow: 8px 8px 0 var(--orange);
+    }
+
+    .project-card p {
+      margin: 0 0 18px;
+      max-width: none;
+    }
+
+    .mock-image {
+      height: 220px;
+      border-radius: 18px;
+      border: 2px solid var(--brown);
+      background:
+        radial-gradient(circle at 18% 22%, var(--yellow) 0 8%, transparent 9%),
+        radial-gradient(circle at 82% 30%, var(--pink) 0 10%, transparent 11%),
+        radial-gradient(circle at 50% 78%, var(--blue) 0 12%, transparent 13%),
+        linear-gradient(135deg, var(--cream), #f4dfbd);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brown);
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .mock-image.orange {
+      background:
+        radial-gradient(circle at 20% 30%, var(--orange) 0 10%, transparent 11%),
+        radial-gradient(circle at 78% 70%, var(--yellow) 0 12%, transparent 13%),
+        linear-gradient(135deg, var(--cream), var(--pink));
+    }
+
+    .mock-image.green {
+      background:
+        radial-gradient(circle at 25% 75%, var(--olive) 0 10%, transparent 11%),
+        radial-gradient(circle at 80% 25%, var(--blue) 0 12%, transparent 13%),
+        linear-gradient(135deg, var(--cream), #e8d8b6);
+    }
+
+    .mock-image.burg {
+      background:
+        radial-gradient(circle at 20% 25%, var(--burg) 0 9%, transparent 10%),
+        radial-gradient(circle at 80% 72%, var(--orange) 0 11%, transparent 12%),
+        linear-gradient(135deg, var(--cream), var(--yellow));
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: var(--blue);
+      color: var(--offblack);
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin: 4px 4px 4px 0;
+      font-weight: 700;
+      border: 2px solid var(--offblack);
+      font-size: 14px;
+    }
+
+    .tag.orange {
+      background-color: var(--orange);
+      color: var(--cream);
+    }
+
+    .tag.yellow {
+      background-color: var(--yellow);
+    }
+
+    .tag.olive {
+      background-color: var(--olive);
+      color: var(--cream);
+    }
+
+    .tag.pink {
+      background-color: var(--pink);
+    }
+
+    .note {
+      background-color: var(--orange);
+      color: var(--cream);
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 780px;
+      margin: 30px auto;
+      font-size: 22px;
+      font-weight: 700;
+      border: 3px solid var(--burg);
+    }
+
+    .process-list {
+      max-width: 850px;
+      margin: 35px auto 0;
+      display: grid;
+      gap: 18px;
+      text-align: left;
+    }
+
+    .process-step {
+      border: 2px solid var(--brown);
+      border-radius: 20px;
+      padding: 22px;
+      background-color: var(--cream);
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .process-step:nth-child(2) {
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .process-step:nth-child(3) {
+      box-shadow: 6px 6px 0 var(--pink);
+    }
+
+    .process-step strong {
+      color: var(--brown);
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background-color: var(--brown);
+      color: var(--cream);
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 23px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 65px 20px 45px;
+      }
+
+      .mock-image {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="mini-heading">Things I’ve made</div>
+    <h1>Portfolio</h1>
+    <p class="intro">A little look at the strategy, branding and content work behind Common Ground.</p>
+    <p>This portfolio is where I share the ideas, visuals and content direction I’ve created for small businesses and brand concepts.</p>
+    <a class="button" href="index.html">Back home</a>
+    <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Work with me</a>
+  </header>
+
+  <section>
+    <div class="mini-heading">My style</div>
+    <h2>Clear ideas, confident visuals and content that actually feels like you.</h2>
+    <p>I like creating work that feels warm, intentional and easy to understand. Not overly polished to the point it loses personality, and not thrown together just for the sake of posting.</p>
+    <p>My approach is about finding the middle ground between strategy and creativity: content that looks good, makes sense and helps people understand what a business is all about.</p>
+
+    <div>
+      <span class="tag">Brand identity</span>
+      <span class="tag orange">Instagram content</span>
+      <span class="tag yellow">Visual direction</span>
+      <span class="tag olive">Strategy</span>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <div class="mini-heading">Featured work</div>
+    <h2>Projects</h2>
+
+    <div class="portfolio-grid">
+
+      <div class="project-card">
+        <div class="mock-image">Common Ground<br>Brand Identity</div>
+        <h3>Common Ground</h3>
+        <p><strong>Project type:</strong> Brand identity, content direction and social media strategy.</p>
+        <p>Common Ground was built around the idea of helping small businesses feel confident online. I developed the visual direction, tone of voice, content pillars and overall brand feel.</p>
+        <p>The aim was to create a brand that felt warm, approachable and creative, while still being clear and professional enough for small business owners to trust.</p>
+        <span class="tag">Brand direction</span>
+        <span class="tag pink">Tone of voice</span>
+        <span class="tag orange">Content strategy</span>
+      </div>
+
+      <div class="project-card">
+        <div class="mock-image orange">Instagram<br>Carousel Design</div>
+        <h3>Instagram Carousel Concepts</h3>
+        <p><strong>Project type:</strong> Educational Instagram content.</p>
+        <p>I created carousel post concepts designed to make social media advice feel simple, useful and easy to save.</p>
+        <p>The focus was on turning common small business struggles, like overthinking content or inconsistent posting, into clear, personable posts with practical takeaways.</p>
+        <span class="tag yellow">Carousel design</span>
+        <span class="tag">Copywriting</span>
+        <span class="tag olive">Audience education</span>
+      </div>
+
+      <div class="project-card">
+        <div class="mock-image green">Groundwork<br>Brand Package</div>
+        <h3>Groundwork</h3>
+        <p><strong>Project type:</strong> Brand identity package development.</p>
+        <p>Groundwork is a brand identity package created for businesses that need stronger foundations before growing online.</p>
+        <p>This project included shaping the offer, naming the package, planning what it includes and positioning it as a helpful first step for businesses who feel visually unclear.</p>
+        <span class="tag olive">Package design</span>
+        <span class="tag pink">Brand foundations</span>
+        <span class="tag orange">Offer strategy</span>
+      </div>
+
+      <div class="project-card">
+        <div class="mock-image burg">Content<br>Planning</div>
+        <h3>Content Planning</h3>
+        <p><strong>Project type:</strong> Social media planning and content ideas.</p>
+        <p>I plan content around what a business needs people to understand, not just what looks nice on a feed.</p>
+        <p>This includes content pillars, caption ideas, post formats, story prompts and simple strategies to help small businesses show up more consistently.</p>
+        <span class="tag">Content pillars</span>
+        <span class="tag yellow">Planning</span>
+        <span class="tag olive">Consistency</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="mini-heading">How I work</div>
+    <h2>My process</h2>
+    <p>I like to make things feel less overwhelming. The goal is to take the messy ideas, scattered notes and “I have no idea what to post” feeling, then turn it into something clear and usable.</p>
+
+    <div class="process-list">
+      <div class="process-step">
+        <p><strong>1. Understand the brand</strong></p>
+        <p>I look at what the business does, who it helps, what makes it different and what feeling the brand needs to give people.</p>
+      </div>
+
+      <div class="process-step">
+        <p><strong>2. Create a clear direction</strong></p>
+        <p>I turn that into a visual and content direction, including colours, style, tone, content ideas and what the business should be known for online.</p>
+      </div>
+
+      <div class="process-step">
+        <p><strong>3. Make it easy to show up</strong></p>
+        <p>The final aim is to make social media feel less like a guessing game and more like something the business can actually keep up with.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <h2>Want your brand to feel more pulled together?</h2>
+    <div class="note">
+      I can help you turn the ideas in your head into content and visuals that actually make sense online.
+    </div>
+    <a class="button green" href="YOUR-ENQUIRY-FORM-LINK-HERE" target="_blank">Enquire now</a>
+    <a class="button" href="packages.html">View packages</a>
+  </section>
+
+  <footer>
+    <p>Common Ground © 2026</p>
+  </footer>
+
+</body>
+</html>
