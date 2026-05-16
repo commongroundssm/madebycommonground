@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Groundwork | Common Ground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f6f2d9;
+      --brown: #72492b;
+      --orange: #cd6d39;
+      --burg: #6b2e2e;
+      --blue: #99b6d6;
+      --offblack: #373737;
+      --yellow: #eab347;
+      --olive: #838f40;
+      --pink: #efc8c4;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cream);
+      color: var(--offblack);
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background-color: var(--cream);
+      border-bottom: 3px solid var(--brown);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--brown);
+    }
+
+    h1 {
+      font-size: 58px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    .mini-heading {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--olive);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      color: var(--burg);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 24px;
+      background-color: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 700;
+      border: 2px solid var(--brown);
+    }
+
+    .button:hover {
+      background-color: var(--burg);
+      border-color: var(--burg);
+    }
+
+    .button.green {
+      background-color: var(--olive);
+      border-color: var(--olive);
+      color: var(--cream);
+    }
+
+    .button.green:hover {
+      background-color: var(--brown);
+      border-color: var(--brown);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: var(--cream);
+    }
+
+    .section-line {
+      border-top: 2px dashed var(--orange);
+      border-bottom: 2px dashed var(--orange);
+    }
+
+    .hero-note {
+      background-color: var(--orange);
+      color: var(--cream);
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 780px;
+      margin: 35px auto 0;
+      font-size: 22px;
+      font-weight: 700;
+      border: 3px solid var(--burg);
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 35px auto 0;
+      text-align: left;
+    }
+
+    .included-item {
+      border: 2px solid var(--brown);
+      border-radius: 20px;
+      padding: 20px;
+      background-color: var(--cream);
+      box-shadow: 6px 6px 0 var(--pink);
+      font-weight: 700;
+    }
+
+    .included-item:nth-child(2n) {
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .included-item:nth-child(3n) {
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .included-item:nth-child(4n) {
+      box-shadow: 6px 6px 0 var(--orange);
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1120px;
+      margin: 40px auto 0;
+      text-align: left;
+    }
+
+    .package-card {
+      background-color: var(--cream);
+      border: 2px solid var(--brown);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 8px 8px 0 var(--pink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .package-card:nth-child(2) {
+      box-shadow: 8px 8px 0 var(--blue);
+    }
+
+    .package-card:nth-child(3) {
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+
+    .package-card p {
+      margin: 0 0 18px;
+      max-width: none;
+    }
+
+    .package-name {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: var(--burg);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 16px 0 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    .best-for {
+      background-color: var(--pink);
+      border: 2px solid var(--brown);
+      border-radius: 18px;
+      padding: 16px;
+      margin: 20px 0;
+      font-weight: 700;
+      color: var(--offblack);
+    }
+
+    .best-for.blue {
+      background-color: var(--blue);
+    }
+
+    .best-for.yellow {
+      background-color: var(--yellow);
+    }
+
+    .process-list {
+      max-width: 850px;
+      margin: 35px auto 0;
+      display: grid;
+      gap: 18px;
+      text-align: left;
+    }
+
+    .process-step {
+      border: 2px solid var(--brown);
+      border-radius: 20px;
+      padding: 22px;
+      background-color: var(--cream);
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .process-step:nth-child(2) {
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .process-step:nth-child(3) {
+      box-shadow: 6px 6px 0 var(--pink);
+    }
+
+    .process-step strong {
+      color: var(--brown);
+    }
+
+    .enquiry-box {
+      max-width: 820px;
+      margin: 45px auto 0;
+      padding: 34px;
+      border: 2px solid var(--brown);
+      border-radius: 26px;
+      box-shadow: 8px 8px 0 var(--olive);
+      background-color: var(--cream);
+    }
+
+    .enquiry-box p {
+      max-width: 650px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background-color: var(--brown);
+      color: var(--cream);
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      li {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 65px 20px 45px;
+      }
+
+      .package-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="mini-heading">Brand identity starter package</div>
+    <h1>Groundwork</h1>
+    <p class="intro">A clear, confident visual direction before you start showing up online.</p>
+    <p>Groundwork is for small businesses who know their brand needs to feel more pulled together, but aren’t quite sure where to start.</p>
+    <a class="button" href="index.html">Back home</a>
+    <a class="button green" href="#enquire">Enquire now</a>
+  </header>
+
+  <section>
+    <div class="mini-heading">What it is</div>
+    <h2>Get grounded before you grow</h2>
+    <p>Before you can post confidently, your brand needs a clear foundation. Groundwork helps you figure out the colours, fonts, visuals and overall feel of your business, so your online presence looks intentional instead of thrown together.</p>
+    <p>It’s not about making your brand look like everyone else’s. It’s about creating a direction that feels like you, makes sense to your audience, and gives you something solid to build from.</p>
+
+    <div class="hero-note">
+      Think of it as your brand’s starting point: less guesswork, more clarity.
+    </div>
+  </section>
+
+  <section class="section-line">
+    <div class="mini-heading">What’s included</div>
+    <h2>Brand foundations that make showing up easier</h2>
+
+    <div class="included-grid">
+      <div class="included-item">Brand moodboard</div>
+      <div class="included-item">Colour palette</div>
+      <div class="included-item">Font pairing suggestions</div>
+      <div class="included-item">Logo direction or simple logo refresh</div>
+      <div class="included-item">Instagram visual direction</div>
+      <div class="included-item">Canva brand kit set-up guidance</div>
+      <div class="included-item">3 branded Canva templates</div>
+      <div class="included-item">Mini brand style guide</div>
+      <div class="included-item">1 revision round</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mini-heading">Package options</div>
+    <h2>Choose your level of Groundwork</h2>
+
+    <div class="packages-grid">
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">Mini Groundwork</h3>
+          <p>For someone who just needs the basics to stop their brand feeling all over the place.</p>
+          <div class="best-for">Best for: colours, fonts, moodboard and simple visual direction.</div>
+          <ul>
+            <li>Brand moodboard</li>
+            <li>Colour palette</li>
+            <li>Basic logo advice</li>
+            <li>Font pairing suggestions</li>
+            <li>Simple brand notes to guide your content</li>
+          </ul>
+        </div>
+        <p class="price">£250</p>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">Groundwork</h3>
+          <p>Your main brand identity starter package. Strong, clear and still accessible for small businesses.</p>
+          <div class="best-for blue">Best for: building a proper brand foundation before showing up online.</div>
+          <ul>
+            <li>Brand moodboard</li>
+            <li>Colour palette</li>
+            <li>Font pairings</li>
+            <li>Logo direction or creation</li>
+            <li>Instagram visual direction</li>
+            <li>Canva brand kit set-up guidance</li>
+            <li>3 branded Canva templates</li>
+            <li>Mini brand style guide</li>
+            <li>1 revision round</li>
+          </ul>
+        </div>
+        <p class="price">£450</p>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <h3 class="package-name">Groundwork Plus</h3>
+          <p>For businesses who want deeper strategy, more design support and a fuller brand direction.</p>
+          <div class="best-for yellow">Best for: logo design or refinement, a full brand guide and more templates.</div>
+          <ul>
+            <li>Everything in Groundwork</li>
+            <li>Full logo design</li>
+            <li>Full brand style guide</li>
+            <li>More Canva templates</li>
+            <li>Deeper brand strategy</li>
+            <li>Stronger content direction</li>
+            <li>More detailed visual rules for your Instagram</li>
+          </ul>
+        </div>
+        <p class="price">£600</p>
+      </div>
+
+    </div>
+
+    <div id="enquire" class="enquiry-box">
+      <h2>Not sure which version you need?</h2>
+      <p>Tell me where your brand is at, what feels unclear, and what you want your business to feel like online. I’ll help you choose the best version of Groundwork.</p>
+      <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Enquire about Groundwork</a>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <div class="mini-heading">How it works</div>
+    <h2>The process</h2>
+    <p>This is designed to feel simple and helpful, not like you’ve been handed a giant branding textbook and told to fend for yourself.</p>
+
+    <div class="process-list">
+      <div class="process-step">
+        <p><strong>1. Brand questionnaire</strong></p>
+        <p>You’ll answer a few questions about your business, audience, style preferences and what currently feels unclear.</p>
+      </div>
+
+      <div class="process-step">
+        <p><strong>2. Visual direction</strong></p>
+        <p>I’ll pull together your moodboard, colour direction, font suggestions and overall brand feel so your business has a clearer look.</p>
+      </div>
+
+      <div class="process-step">
+        <p><strong>3. Brand foundations</strong></p>
+        <p>You’ll receive your brand direction, Canva guidance, templates and style notes so you can start showing up with more consistency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ready to give your brand somewhere solid to stand?</h2>
+    <div class="hero-note">
+      Groundwork helps you stop guessing your way through your visuals and start showing up with a brand that actually feels like you.
+    </div>
+    <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Enquire now</a>
+    <a class="button" href="packages.html">View social media packages</a>
+  </section>
+
+  <footer>
+    <p>Common Ground © 2026</p>
+  </footer>
+
+</body>
+</html>
