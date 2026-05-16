@@ -1,42 +1,319 @@
-index.html
 <!DOCTYPE html>
 <html>
 <head>
   <title>Common Ground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --cream: #f6f2d9;
+      --brown: #72492b;
+      --orange: #cd6d39;
+      --burg: #6b2e2e;
+      --blue: #99b6d6;
+      --offblack: #373737;
+      --yellow: #eab347;
+      --olive: #838f40;
+      --pink: #efc8c4;
+    }
+
     body {
-      background-color: #f4efe7;
-      color: #2f2a25;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--cream);
+      color: var(--offblack);
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 90px 20px 70px;
       text-align: center;
-      padding: 80px 20px;
+      background-color: var(--cream);
+      border-bottom: 3px solid var(--brown);
     }
 
     h1 {
-      font-size: 48px;
+      font-family: 'Fraunces', serif;
+      font-size: 64px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
+      color: var(--brown);
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: var(--brown);
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      color: var(--brown);
+      margin-top: 0;
     }
 
     p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      line-height: 1.5;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 20px;
     }
 
-    a {
-      background-color: #2f2a25;
-      color: #f4efe7;
+    .intro {
+      color: var(--burg);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
       padding: 14px 24px;
+      background-color: var(--brown);
+      color: var(--cream);
       text-decoration: none;
       border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid var(--brown);
+    }
+
+    .button:hover {
+      background-color: var(--burg);
+      border-color: var(--burg);
+    }
+
+    .button.secondary {
+      background-color: var(--orange);
+      border-color: var(--orange);
+      color: var(--cream);
+    }
+
+    .button.secondary:hover {
+      background-color: var(--burg);
+      border-color: var(--burg);
+    }
+
+    .button.green {
+      background-color: var(--olive);
+      border-color: var(--olive);
+      color: var(--cream);
+    }
+
+    .button.green:hover {
+      background-color: var(--brown);
+      border-color: var(--brown);
+    }
+
+    .button.small {
+      font-size: 15px;
+      padding: 10px 18px;
+      margin: 10px 0 0;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: var(--cream);
+    }
+
+    .section-line {
+      border-top: 2px dashed var(--orange);
+      border-bottom: 2px dashed var(--orange);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto 0;
+    }
+
+    .card {
+      background-color: var(--cream);
+      border: 2px solid var(--brown);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 8px 8px 0 var(--pink);
+    }
+
+    .card:nth-child(2) {
+      box-shadow: 8px 8px 0 var(--blue);
+    }
+
+    .card:nth-child(3) {
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+
+    .price {
+      color: var(--burg);
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      background-color: var(--orange);
+      color: var(--cream);
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 700px;
+      margin: 30px auto;
+      font-size: 22px;
+      font-weight: bold;
+      border: 3px solid var(--burg);
+    }
+
+    .tag {
       display: inline-block;
+      background-color: var(--blue);
+      color: var(--offblack);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin: 6px;
+      font-weight: bold;
+      border: 2px solid var(--offblack);
+    }
+
+    .tag.orange {
+      background-color: var(--orange);
+      color: var(--cream);
+    }
+
+    .tag.yellow {
+      background-color: var(--yellow);
+    }
+
+    .tag.olive {
+      background-color: var(--olive);
+      color: var(--cream);
+    }
+
+    .tag.pink {
+      background-color: var(--pink);
+    }
+
+    .mini-heading {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--olive);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background-color: var(--brown);
+      color: var(--cream);
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      header {
+        padding: 70px 20px 50px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Common Ground</h1>
-  <p>Helping small businesses feel confident online.</p>
-  <a href="mailto:missyjohaydn@gmail.com">Work with me</a>
+
+  <header>
+    <div class="mini-heading">Social media support for small businesses</div>
+    <h1>COMMON GROUND</h1>
+    <p class="intro">Helping small businesses feel confident online.</p>
+    <p>Social media support for small businesses who want to show up properly online, without overthinking every single post.</p>
+    <a class="button" href="portfolio.html">Portfolio</a>
+    <a class="button secondary" href="#services">View services</a>
+  </header>
+
+  <section>
+    <h2>What I actually do</h2>
+    <p>I help small businesses turn their online presence into something that feels clear, consistent and actually like them.</p>
+    <p>That might mean planning your content, refreshing your Instagram, creating posts, building your brand visuals or helping you figure out what to say when your brain goes completely blank.</p>
+
+    <div>
+      <span class="tag">Content planning</span>
+      <span class="tag orange">Instagram support</span>
+      <span class="tag yellow">Brand visuals</span>
+      <span class="tag olive">Confidence sessions</span>
+      <span class="tag pink">Less overthinking</span>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <h2>The person behind it</h2>
+    <p>I’m Missy, the person behind Common Ground.</p>
+    <p>I started this after helping someone with their social media and realising I genuinely loved turning messy ideas into content that felt clear, confident and easy to understand.</p>
+    <p>Common Ground is built for small businesses who don’t need a scary agency or a load of jargon. They just need someone creative, honest and organised to help them show up online in a way that actually feels like them.</p>
+  </section>
+
+  <section id="services">
+    <div class="mini-heading">How I can help</div>
+    <h2>Support that meets you where you are</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Social media management</h3>
+        <p>For when you want help keeping your content consistent, intentional and on-brand.</p>
+        <a class="button small yellow" href="packages.html">Package options</a>
+      </div>
+
+      <div class="card">
+        <h3>Brand identity support</h3>
+        <p>For when your business needs a clearer visual direction, tone and overall feel.</p>
+        <a class="button small pink" href="groundwork.html">Get grounded</a>
+      </div>
+
+      <div class="card">
+        <h3>Confidence sessions</h3>
+        <p>A focused Instagram review to help you understand what’s working, what isn’t and what to do next.</p>
+        <p class="price">£45</p>
+        <a class="button small blue" href="https://calendly.com/commongroundssm/confidencecall" target="_blank">Book a call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-line">
+    <h2>This is for you if...</h2>
+    <div class="note">
+      You know your business needs to be online, but posting feels like another job.
+    </div>
+    <p>Your Instagram doesn’t really reflect how good your business actually is. You want content that feels more confident, more consistent and less thrown together at midnight.</p>
+  </section>
+
+  <section>
+    <h2>Ready to get your social media stress off your plate?</h2>
+    <p>Let’s find our Common Ground.</p>
+    <a class="button green" href="https://tally.so/r/gDQWBO" target="_blank">Let’s chat</a>
+  </section>
+
+  <footer>
+    <p>Common Ground © 2026</p>
+  </footer>
+
 </body>
 </html>
