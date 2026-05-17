@@ -19,6 +19,47 @@
       --pink: #efc8c4;
     }
 
+      nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 20px;
+      background-color: var(--cream);
+      border-bottom: 2px solid var(--brown);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: var(--brown);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    .nav-button {
+      background-color: var(--olive);
+      color: var(--cream);
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--olive);
+    }
+
+    .nav-button:hover {
+      background-color: var(--brown);
+      border-color: var(--brown);
+      color: var(--cream);
+    }
+    
     body {
       margin: 0;
       background-color: var(--cream);
@@ -295,47 +336,6 @@
       .mock-image {
         height: 180px;
       }
-      
-      nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 20px;
-      background-color: var(--cream);
-      border-bottom: 2px solid var(--brown);
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: var(--brown);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    nav a:hover {
-      color: var(--orange);
-    }
-
-    .nav-button {
-      background-color: var(--olive);
-      color: var(--cream);
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 2px solid var(--olive);
-    }
-
-    .nav-button:hover {
-      background-color: var(--brown);
-      border-color: var(--brown);
-      color: var(--cream);
-    }
         </style>
 </head>
 
